@@ -118,19 +118,19 @@ class Ball {
     if (pos.x<=width*2/40+8 && pos.y>=p1.pos.y-8 && pos.y<=p1.pos.y+108) {
       float hit = pos.y-p1.pos.y;
       if (hit<50) {
-        vel.y=0;
+        vel.y=-abs(vel.x)*((4/3)*((50-hit)/50));
       } else if (hit>50) {
-        vel.y=0;
+        vel.y=abs(vel.x)*((4/3)*((hit-50)/50));
       } else {
         vel.y=0;
       }
       vel.x=abs(vel.x)+0.5;
     } else if (pos.x>=width*38/40-8 && pos.y>=p2.pos.y-8 && pos.y<=p2.pos.y+108) {
-      float hit = pos.y-p1.pos.y;
+      float hit = pos.y-p2.pos.y;
       if (hit<50) {
-        vel.y=-abs(vel.x)*((4/3)*(hit/50) //?????????????
+        vel.y=-abs(vel.x)*((4/3)*((50-hit)/50));
       } else if (hit>50) {
-        vel.y=0;
+        vel.y=abs(vel.x)*((4/3)*((hit-50)/50));
       } else {
         vel.y=0;
       }
