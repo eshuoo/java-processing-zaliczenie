@@ -25,6 +25,7 @@ void setup() {
 
 void draw() {
   background(0);
+  noStroke();
   if (ball.vel.y==0) {
     if (frameCount%60<=30) {
       fill(255);
@@ -123,7 +124,7 @@ class Ball {
         vel.x=-vel.x;
         bricks[i].alive=false;
       }
-      if (pos.x<=x+width/8-8 && pos.x>=x+8) {
+      if (pos.x<=x+width/8-4 && pos.x>=x+4) {
         vel.y=-vel.y;
         bricks[i].alive=false;
       }
